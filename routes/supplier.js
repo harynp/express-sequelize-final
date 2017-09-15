@@ -3,14 +3,34 @@ var router = express.Router();
 var models = require('../models')
 /* GET home page. */
 router.get('/', (req, res) =>{
-  models.suppliers.findAll()
+  models.suppliers.findAll({
+    include: [{ model: models.items }],
+  })
   .then(rows =>{
+    // console.log(rows);
     res.render('suppliers', {data: rows})
   })
   .catch(err =>{
     res.send(err)
   })
 })
+
+// router.get('/', (req, res) => {
+//   models.Teachers.findAll({
+//     order : [['id','ASC']],
+//     include: [{ model: models.Subjects  }]
+//   })
+//   .then(data => {
+//     res.render('teachers', {
+//       data: data,
+//       tittle: 'Halaman Teachers'
+//     })
+//   }).catch(err => {
+//     res.send(err)
+//   })
+// })
+
+
 
 router.get('/add', (req, res) => {
   models.suppliers.findAll()

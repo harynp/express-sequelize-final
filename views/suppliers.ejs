@@ -9,6 +9,8 @@
           <th>ID</th>
           <th>Nama</th>
           <th>Kota</th>
+          <th>List Item</th>
+          <th>Add Items</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -18,6 +20,11 @@
             <td><%=rows.id%></td>
             <td><%=rows.nama%></td>
             <td><%=rows.kota%></td>
+            <td>  <% rows.items.forEach((items, index) => { %>
+                  <%= '*' + items.brand %>
+                    <br></br>
+                    <% }) %></td>
+            <td></td>
             <td>
               <a href="/suppliers/edit/<%=rows.id%>"><button>Edit</button></a>
               <a href="/suppliers/delete/<%=rows.id%>"><button>Delete</button></a>

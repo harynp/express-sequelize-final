@@ -2,7 +2,8 @@
 module.exports = (sequelize, DataTypes) => {
   var supplier = sequelize.define('suppliers', {
     nama: DataTypes.STRING,
-    kota: DataTypes.STRING
+    kota: DataTypes.STRING,
+    ItemId: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
@@ -10,8 +11,9 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  // supplier.associate = function(models){
-  //     supplier.belongsToMany(models.items, {through:models.supplieritem})
-  //   }
+  supplier.associate = function(models){
+      supplier.belongsToMany(models.items, {through:models.supplieritem})
+      supplier.hasMany(models.supplieritem)
+    }
   return supplier;
 };
