@@ -1,0 +1,34 @@
+{
+  "name": "express-sequelize-final",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "start:dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "ejs": "^2.5.7",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "nodemon": "^1.12.0",
+    "pg": "^7.3.0",
+    "sequelize": "^4.8.3",
+    "sequelize-cli": "^3.0.0-2",
+    "serve-favicon": "~2.4.2"
+  },
+  "description": "repo final live code kit fox 2017",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harynp/express-sequelize-final.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harynp/express-sequelize-final/issues"
+  },
+  "homepage": "https://github.com/harynp/express-sequelize-final#readme"
+}

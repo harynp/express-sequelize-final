@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <%-include partials/head.ejs%>
+  <body>
+    <h1>Daftar Drivers</h1>
+    <a href="drivers/add"><button>Add</button></a>
+    <table border='2px'>
+      <thead>
+        <tr>
+          <th class="text-center">ID</th>
+          <th class="text-center">Nama Driver </th>
+          <th class="text-center">Telepon </th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%data.forEach( rows => { %>
+          <tr>
+            <td class="text-center"><%=rows.id%></td>
+            <td class="text-center"><%=rows.nama%></td>
+            <td class="text-center"><%=rows.telp%></td>
+            <td class="text-center">
+              <a href="/drivers/edit/<%=rows.id%>"><button class="text-center">Edit</button></a>
+              <a href="/drivers/delete/<%=rows.id%>"><button class="text-center">Delete</button></a>
+            </td>
+          </tr>
+        <% })%>
+      </tbody>
+    </table>
+  </body>
+</html>

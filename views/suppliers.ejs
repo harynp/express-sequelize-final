@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Daftar Drivers</h1>
+    <a href="suppliers/add"><button>Add</button></a>
+    <table border='2px'>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nama</th>
+          <th>Kota</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%data.forEach( rows => { %>
+          <tr>
+            <td><%=rows.id%></td>
+            <td><%=rows.nama%></td>
+            <td><%=rows.kota%></td>
+            <td>
+              <a href="/suppliers/edit/<%=rows.id%>"><button>Edit</button></a>
+              <a href="/suppliers/delete/<%=rows.id%>"><button>Delete</button></a>
+            </td>
+          </tr>
+        <% })%>
+      </tbody>
+    </table>
+  </body>
+</html>
