@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Halaman Edit Items</h1>
+  </td>
+  </tr>
+    </tbody>
+    </table>
+</body>
+<table border = '2px'>
+  <form action="/items/edit/<%=data.id%>" method="post">
+    Nama : <input type="text" name="name" placeholder="nama" value = "<%= data.name%>"> <br>
+    Brands : <input type="text" name="brand" placeholder="kota" value = "<%= data.brand%>"> <br>
+    Code Items : <input type="text" name="codeitem" placeholder="Code Items" value = "<%= data.codeitem%>"> <br>
+     <input type="submit" value="SELESAI">
+  </form>
+</table>
+</html>

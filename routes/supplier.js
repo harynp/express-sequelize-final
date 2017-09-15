@@ -44,34 +44,27 @@ router.get('/delete/:id', (req, res) => {
   })
 })
 
-// router.get('/edit/:id', (req, res) => {
-//   models.Teachers.findById(req.params.id).then(teachers => {
-//     models.Subjects.findAll().then(subjects => {
-//       res.render('teachersedit', {
-//         data: teachers,
-//         subject: subjects,
-//         tittle: 'Halaman Edit Teachers'
-//       })
-//     })
-//   }).catch(err => {
-//     res.send(err)
-//   })
-// })
-//
-// router.post('/edit/:id', (req, res) => {
-//   models.Teachers.update({
-//
-//     first_name: `${req.body.first_name}`,
-//     last_name: `${req.body.last_name}`,
-//     email: `${req.body.email}`,
-//     subjectsId: `${req.body.subjectsId}`
-//   }, {
-//     where: {
-//       id: `${req.params.id}`
-//     }
-//   }).then(dataTeachers => {
-//     res.redirect('/teachers');
-//   })
-// })
+router.get('/edit/:id', (req, res) => {
+  models.suppliers.findById(req.params.id)
+  .then(data => {
+      res.render('edit_suppliers', {data: data})
+  })
+  .catch(err => {
+    res.send(err)
+  })
+})
+
+router.post('/edit/:id', (req, res) => {
+  models.suppliers.update({
+    nama: `${req.body.nama}`,
+    kota: `${req.body.kota}`
+  }, {
+    where: {
+      id: `${req.params.id}`
+    }
+  }).then(data => {
+    res.redirect('/suppliers');
+  })
+})
 
 module.exports = router;
